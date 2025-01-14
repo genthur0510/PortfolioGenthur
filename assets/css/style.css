@@ -726,13 +726,15 @@ main {
  * #clients 
  */
 
-.clients { margin-bottom: 15px; }
+ .clients {
+  margin-bottom: 15px;
+}
 
 .clients-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
+  justify-content: center; /* Memusatkan item secara horizontal */
+  align-items: center; /* Memusatkan item secara vertikal */
+  gap: 30px; /* Tambahkan jarak antar item */
   margin: 0 -15px;
   padding: 25px;
   padding-bottom: 25px;
@@ -744,18 +746,21 @@ main {
 }
 
 .clients-item {
-  min-width: 50%;
+  min-width: auto; /* Tidak ada batas minimum lebar untuk menyesuaikan jumlah item */
   scroll-snap-align: start;
+  display: flex; /* Memastikan gambar tetap terpusat */
+  justify-content: center;
+  align-items: center;
 }
 
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
+  width: 200px; /* Perbesar lebar gambar */
+  height: 200px; /* Perbesar tinggi gambar */
+  object-fit: contain; /* Menjaga proporsi gambar */
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
-
+.about-text p { text-align: justify; }
 
 
 
@@ -956,7 +961,7 @@ main {
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
@@ -1398,11 +1403,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 18px;
     padding: 30px;
   }
-
+  
   .service-icon-box {
     margin-bottom: 0;
     margin-top: 5px;
   }
+  
 
   .service-content-box { text-align: left; }
 
@@ -1499,6 +1505,29 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
+
+/* Style for the download button */
+.btn-download {
+  background-color: var(--jet); /* Initial black color */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 30px; /* Adjusted margin for space between button and skills */
+}
+
+.btn-download:hover {
+  background-color: #ffcc00; /* Hover effect color change to yellow */
+}
+
+.skills-title {
+  margin-top: 0px; /* Add space between button and skill section */
+}
 
 
 
